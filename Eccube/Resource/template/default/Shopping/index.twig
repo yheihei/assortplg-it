@@ -195,8 +195,10 @@ $(function() {
                                         {% set displayAssort = false %}
                                         {% for assortCartItem in AssortCartItems %}
                                             {% if assortCartItem.object.Product.id == orderDetail.Product.id %}
+                                                {% if assortCartItem.assort_img != null %}
                                                 <img src="{{ assortCartItem.assort_img }}" alt="{{ orderDetail.productName }}" />
                                                 {% set displayAssort = true %}
+                                                {% endif %}
                                             {% endif %}
                                         <!-- yhei -->
                                         {% endfor %}
