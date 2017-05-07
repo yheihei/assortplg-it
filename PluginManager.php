@@ -142,7 +142,8 @@ class PluginManager extends AbstractPluginManager
         foreach($target_core_files as $file) {
             $fs = new Filesystem();
             $fs->copy($app['config']['root_dir'].'/src/Eccube'.$file,
-                $app['config']['plugin_realdir'].'/AssortContent/backup'.$file);
+                $app['config']['plugin_realdir'].'/AssortContent/backup'.$file,
+                true);
         }
     }
     
@@ -157,7 +158,8 @@ class PluginManager extends AbstractPluginManager
         foreach($target_core_files as $file) {
             $fs = new Filesystem();
             $fs->copy($app['config']['plugin_realdir'].'/AssortContent/Eccube'.$file,
-                $app['config']['root_dir'].'/src/Eccube'.$file);
+                $app['config']['root_dir'].'/src/Eccube'.$file,
+                true);
         }
     }
     
@@ -172,7 +174,8 @@ class PluginManager extends AbstractPluginManager
         foreach($target_core_files as $file) {
             $fs = new Filesystem();
             $fs->copy($app['config']['plugin_realdir'].'/AssortContent/backup'.$file,
-                $app['config']['root_dir'].'/src/Eccube'.$file);
+                $app['config']['root_dir'].'/src/Eccube'.$file,
+                true);
         }
     }
 
