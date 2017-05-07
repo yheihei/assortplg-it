@@ -302,6 +302,8 @@ class MailService
         
         foreach ($AssortCartItems as $Assort) {
             $row_data = $Assort->getAssortImg();
+            //アソートのキャプチャ画像がない場合（非アソートの商品）画像添付しない
+            if($row_data == null) continue;
             $data = split(",",$row_data)[1];
             $name = $Assort->getObject()->getProduct()->getName();
             $attachment = \Swift_Attachment::newInstance()
