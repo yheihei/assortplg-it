@@ -1,0 +1,23 @@
+Plugin\AssortContent\Entity\AssortContent:
+    type: entity
+    table: plg_assort
+    repositoryClass: Plugin\AssortContent\Repository\AssortContentRepository
+    id:
+        assort_id:
+            type: integer
+            nullable: false
+            unsigned: false
+            id: true
+            column: assort_id
+            generator:
+                strategy: AUTO
+    fields:
+        name:
+            type: text
+            nullable: false
+            length: 65535
+        image_file_name:
+            type: text
+            nullable: false
+
+    lifecycleCallbacks: {  }

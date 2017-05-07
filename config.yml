@@ -1,0 +1,11 @@
+name: アソートコンテンツプラグイン
+code: AssortContent
+version: 1.0.0
+event: AssortContentEvent
+service:
+    - AssortContentServiceProvider
+    - AssortProductContentServiceProvider
+orm.path:
+    - /Resource/doctrine
+const:
+    save_dir: /plugin/AssortContent/image/

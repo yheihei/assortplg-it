@@ -1,0 +1,19 @@
+admin.product.edit.initialize:
+    - [onAdminProductInit, NORMAL]
+admin.product.edit.complete:
+    - [onAdminProductEditComplete, NORMAL]
+Admin/Product/product.twig:
+    - [onRenderAdminProductDetail, NORMAL]
+front.product.detail.initialize:
+    - [onProductInit, NORMAL]
+front.cart.index.complete:
+    - [onCartInitComplete, NORMAL]
+# front product page event
+Product/detail.twig:
+    - [onRenderProductDetail, NORMAL]
+# front cart page event
+Cart/index.twig:
+    - [onRenderCartIndex, NORMAL]
+# front shopping page twig
+Shopping/index.twig:
+    - [onRenderShoppingInit, NORMAL]

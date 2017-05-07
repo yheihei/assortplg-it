@@ -1,0 +1,33 @@
+Plugin\AssortContent\Entity\AssortProductContent:
+    type: entity
+    table: plg_assort_product
+    repositoryClass: Plugin\AssortContent\Repository\AssortProductContentRepository
+    id:
+        product_id:
+            type: integer
+            nullable: false
+            unsigned: false
+            id: true
+            column: product_id
+        assort_id:
+            type: integer
+            nullable: false
+            unsigned: false
+            id: true
+            column: assort_id
+            
+    manyToOne:
+        Product:
+            targetEntity: Eccube\Entity\Product
+            inversedBy: AssortProductContents
+            joinColumn:
+                name: product_id
+                referencedColumnName: product_id
+                
+        AssortContent:
+            targetEntity: Plugin\AssortContent\Entity\AssortContent
+            inversedBy: AssortProductContents
+            joinColumn:
+                name: assort_id
+                referencedColumnName: assort_id
+    lifecycleCallbacks: {  }
