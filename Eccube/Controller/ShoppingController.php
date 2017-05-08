@@ -341,7 +341,15 @@ class ShoppingController extends AbstractController
             $MailHistory = $app['eccube.service.shopping']->sendOrderMail($Order);
             */
             //dump($AssortItems);
-            if(!is_null($AssortItems[0]->getAssort()[0])) {
+            $isAssort = false;
+            foreach ($AssortItems as $Assort) {
+                //カートの中に有効なアソート商品があればアソート情報を受注メールにのせる
+                if($Assort->getAssort() != null) {
+                    $isAssort = true;
+                    break;
+                }
+            }
+            if($isAssort) {
                 $MailHistory = $app['eccube.service.shopping']->sendOrderAssortMail($Order, $AssortItems);
             } else {
                 $MailHistory = $app['eccube.service.shopping']->sendOrderMail($Order);
